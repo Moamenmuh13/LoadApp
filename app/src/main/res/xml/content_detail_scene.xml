@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/titleNameFileTxtView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:rotation="360"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toStartOf="@+id/titleNameFileResultTxtView"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/titleNameFileResultTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:rotation="360"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/titleNameFileTxtView"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/statusTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="76dp"
+            android:rotation="360"
+            app:layout_constraintBottom_toTopOf="@+id/okBtn"
+            app:layout_constraintEnd_toStartOf="@+id/statusResultTxtView"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/statusResultTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="64dp"
+
+            android:rotation="360"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/statusTxtView"
+            app:layout_constraintTop_toBottomOf="@+id/titleNameFileResultTxtView" />
+        <Constraint
+            android:id="@+id/okBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="50dp"
+            android:rotation="360"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusResultTxtView" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/titleNameFileTxtView" />
+        <Constraint android:id="@id/titleNameFileResultTxtView" />
+        <Constraint android:id="@id/statusTxtView" />
+        <Constraint android:id="@id/statusResultTxtView" />
+        <Constraint android:id="@id/okBtn" />
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="5000" />
+</MotionScene>
